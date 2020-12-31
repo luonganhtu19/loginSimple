@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: luong
   Date: 12/31/2020
@@ -8,17 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="css/loginCSS.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>iBanking | TPBank</title>
   </head>
   <body>
-  <form action="/login" method="post">
-    <div class="login">
-      <h2>Login</h2>
-      <input type="text" name="username" size="20" placeholder="username"/>
-      <input type="password" name="password" size="20" placeholder="password"/>
-      <input type="submit" value="Sign in" />
-    </div>
-  </form>
+        <h1>iBanking TPBank</h1>
+        <%
+          String username= request.getParameter("username");
+          Date loginTime=(Date) request.getAttribute("loginTime");
+        %>
+        <h3>Hi <%=username%></h3>
+        <h3>Login time: <%=loginTime%></h3>
   </body>
 </html>
